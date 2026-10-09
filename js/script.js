@@ -1,22 +1,14 @@
-const message = document.querySelector(".top-message");
-const closeMessage = document.getElementById("closeMessage");
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+document.addEventListener("DOMContentLoaded", function () {
+  const message = document.querySelector(".top-message");
+  const closeMessage = document.getElementById("closeMessage");
 
-closeMessage?.addEventListener("click", () => {
-  message.style.display = "none";
+  if (closeMessage && message) {
+    closeMessage.addEventListener("click", function () {
+      message.style.display = "none";
+    });
+  }
 });
 
-menuToggle?.addEventListener("click", () => {
-  mainNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", mainNav.classList.contains("open"));
-});
-
-document.querySelectorAll("#mainNav a").forEach(link => {
-  link.addEventListener("click", () => mainNav.classList.remove("open"));
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
 
 const contactForm = document.getElementById("contactForm");
 const formNote = document.getElementById("formNote");
